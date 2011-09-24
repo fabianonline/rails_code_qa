@@ -24,7 +24,7 @@ namespace :rcqa do
       Rake::Task["rcqa:#{section_name}"].invoke
       unless '1.9'.respond_to?(:encoding)
         unless section[:folders].nil?
-          puts "HTML output: <file:///#{File.join([Rails.root, 'coverage', section_name, 'index.html'])}>"
+          puts "HTML output: <file:///#{File.join([Rails.root, 'coverage', 'test', 'index.html'])}>"
         end
         puts "\n\n"
       end
@@ -43,7 +43,8 @@ namespace :rcqa do
           t.libs << "test"
           t.test_files = Dir["test/#{section_name.singularize}/**/*_test.rb"]
           t.rcov_opts = ["--html", "--text-report", "--exclude '^(?!(#{section[:folders]}))'"]
-          t.output_dir = "coverage/#{section_name}"
+          t.rcov_opts << ENV['RCOV_PARAMS'] if ENV['RCOV_PARAMS']
+          t.output_dir = "coverage/test"
         end
       end
     end
