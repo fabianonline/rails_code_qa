@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
     "lib/rails_code_qa/railtie.rb",
     "lib/task_helpers.rb"
   ]
-  s.add_dependency(%q<rcov>, ["= 0.9.9"])
+  s.add_dependency(%q<rcov>, ["~> 0.9.9"])
   s.add_dependency(%q<flog>, ["= 2.5.1"])
   s.add_dependency(%q<flay>, ["= 1.4.2"])
   s.add_dependency(%q<simplecov>, [">=0.4.0"])
