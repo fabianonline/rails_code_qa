@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
 	s.authors = ["Nathan Humbert"]
 	s.email = ["nathan.humbert+rcqa@gmail.com"]
 	s.files = [
-    "README",
+    "README.markdown",
     "MIT_LICENSE",
     "lib/tasks/rails_code_qa.rake",
     "lib/rails_code_qa.rb",
